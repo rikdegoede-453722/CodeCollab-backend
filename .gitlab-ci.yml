@@ -6,6 +6,8 @@ stages:
 
 build-job:
   stage: build
+  tags: 
+    - backend-builder
   script:
     - echo "Compiling the code..."
     - dotnet build
