@@ -1,0 +1,31 @@
+stages:
+  - build
+  - test
+  - deploy
+
+
+build-job:
+  stage: build
+  tags: 
+    - build
+  script:
+    - echo "Compiling the code..."
+    - dotnet build
+
+
+unit-test-job:
+  stage: test
+  tags:
+    - build
+  script:
+    - echo "Running unit tests..."
+    - dotnet test
+
+
+deploy-job:
+  stage: deploy
+  environment: production
+  tags:
+    - docker
+  script:
+    - docker build .
