@@ -16,7 +16,7 @@ build-job:
 unit-test-job:
   stage: test
   tags:
-    - test
+    - build
   script:
     - echo "Running unit tests..."
     - dotnet test
