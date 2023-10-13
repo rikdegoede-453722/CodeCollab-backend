@@ -28,5 +28,4 @@ deploy-job:
   tags:
     - docker
   script:
-    - echo "Deploying application..."
-    - echo "Application successfully deployed."
+    - docker build .
